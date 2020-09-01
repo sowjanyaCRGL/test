@@ -1,0 +1,32 @@
+version: '2'
+services:
+  chrome:
+    image: selenium/node-chrome-debug:3.141.59-20200326
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome2:
+    image: selenium/node-chrome-debug:3.141.59-20200326
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+
+  chrome3:
+    image: selenium/node-chrome-debug:3.141.59-20200326
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+  hub:
+    image: selenium/hub:3.141.59-20200326
+    ports:
+      - "4444:4444"
